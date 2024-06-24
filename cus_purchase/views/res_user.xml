@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record id="view_res_users_form_inherit" model="ir.ui.view">
+            <field name="name">res.users.form.inherit</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//group[@class='o_label_nowrap']/group" position="inside">
+                    <field name="custom_checkbox" groups="base.group_no_one" readonly="sel_groups_1_10_11 != 1"/>
+                </xpath>
+
+                <!--                <field name="state" position="attributes">-->
+                <!--                    <attribute name="widget">statusbar</attribute>-->
+                <!--                    <attribute name="statusbar_visible">draft,to_approve,posted</attribute>-->
+                <!--                </field>-->
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
+
+
+

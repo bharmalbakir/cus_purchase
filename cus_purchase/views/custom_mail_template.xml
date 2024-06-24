@@ -1,0 +1,65 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<odoo>-->
+<!--    <record id="custom_mail_template_inherit" model="ir.ui.view">-->
+<!--        <field name="name">custom.mail.template.inherit</field>-->
+<!--        <field name="model">mail.template</field>-->
+<!--        <field name="inherit_id" ref="mail.view_template_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//field[@name='body_html']" position="replace">-->
+<!--                <field name="body_html" widget="html" options="{'sandboxedPreview': true}" readonly="state not in ['outgoing', 'exception']"/>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//field[@name='body_html']" position="after">-->
+<!--                <div>-->
+<!--                    <p><strong>Dear Mitchell Admin,</strong></p>-->
+<!--                </div>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--</odoo>-->
+
+<!--<odoo>-->
+<!--    <record id="your_custom_email_form_view_id" model="ir.ui.view">-->
+<!--        <field name="name">email.mail.form</field>-->
+<!--        <field name="model">mail.mail</field>-->
+<!--        <field name="inherit_id" ref="mail.view_mail_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//page[@name='body']" position="inside">-->
+<!--                <div>-->
+<!--                    <p>-->
+<!--                        <strong>Dear Mitchell Admin,</strong>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        An Invoice from <strong>Marc Demo</strong> is awaiting for your Approval to be posted.<br></br> Please, access it from below button-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--</odoo>-->
+
+<odoo>
+    <record id="your_custom_email_form_view_id" model="ir.ui.view">
+        <field name="name">email.mail.form</field>
+        <field name="model">mail.mail</field>
+        <field name="inherit_id" ref="mail.view_mail_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='body_html']" position="before">
+                <div>
+                    <p>
+                        <strong>Dear Mitchell Admin,</strong>
+                    </p>
+                    <p>
+                        An Invoice from <strong>Marc Demo</strong> is awaiting for your Approval to be posted.<br/>
+                        Please, access it from below button
+                    </p>
+                    <a href="your_invoice_url" style="background-color: green; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">
+                        View Invoice
+                    </a>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
+
+

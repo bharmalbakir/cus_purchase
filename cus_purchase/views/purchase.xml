@@ -1,0 +1,50 @@
+<!--<odoo>-->
+<!--    <record id="view_res_partner_form_inherited" model="ir.ui.view">-->
+<!--        <field name="name">res.partner.form.inherited</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="inherit_id" ref="base.view_partner_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <notebook>-->
+<!--                <page string="Invoice &amp; Double &amp; Approval &amp; Setting"-->
+<!--                      name="invoice_double_approval_setting">-->
+<!--                    <group name="configure_heading" string="CONFIGURE INVOICE APPROVALS" priority="2"/>-->
+
+<!--                    <div>-->
+<!--                        <span class="o_form_label_note">-->
+<!--                        </span>-->
+<!--                        <setting id="automatic_orders" help="Double Validation Amount">-->
+<!--                            <field name="lock_confirmed_po"/>-->
+<!--                        </setting>-->
+<!--                        <field name="validation_lock_po" string="Vendor Bill Double Validate"/>-->
+
+<!--                    </div>-->
+<!--                </page>-->
+<!--            </notebook>-->
+
+<!--        </field>-->
+<!--    </record>-->
+<!--</odoo>-->
+
+<odoo>
+    <record id="view_res_partner_form_inherited" model="ir.ui.view">
+        <field name="name">res.partner.form.inherited</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <notebook>
+                <page string="Invoice &amp; Double &amp; Approval &amp; Setting"
+                      name="invoice_double_approval_setting">
+                    <group name="configure_heading" string="CONFIGURE INVOICE APPROVALS" priority="2"/>
+                    <div>
+                        <span class="o_form_label_note"></span>
+                        <setting id="automatic_orders" help="Double Validation Amount">
+                            <field name="lock_confirmed_po"/>
+                        </setting>
+<!--                        <field name="vendor_bill_checkbox" string="Vendor Bill"/>-->
+<!--                        <field name="validation_lock_po" string="Vendor Bill Double Validate"/>-->
+                    </div>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>
